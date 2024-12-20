@@ -1,6 +1,6 @@
 <?php
 
-namespace MyProject;
+namespace App;
 
 class FileHandler
 {
@@ -10,12 +10,6 @@ class FileHandler
             return "Ошибка: Файл не найден.";
         }
 
-        $content = file_get_contents($filename);
-
-        if ($content === false) {
-            return "Ошибка: Не удалось прочитать файл.";
-        }
-
-        return $content;
+        return file_get_contents($filename);
     }
 }
