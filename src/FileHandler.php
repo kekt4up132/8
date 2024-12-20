@@ -10,6 +10,12 @@ class FileHandler
             return "Ошибка: Файл не найден.";
         }
 
-        return file_get_contents($filename);
+        $content = file_get_contents($filename);
+        
+        if ($content === false) {
+            return "Ошибка: Не удалось прочитать файл.";
+        }
+
+        return $content;
     }
 }
